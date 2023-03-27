@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js">   </script>
+    <style>
+        .demo{
+            width: 300px;
+            height: 300px;
+            background-color: blue;
+        }
+        .demo.active{
+            background-color: aqua;
+        }
+        .demo.error{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+      <div class="demo" v-bind:class={active:isactive,error:isError}></div>
+      <button v-on:click="changeActive">changeActive</button>
+      <button v-on:click="changeError">changeError</button>
+    </div>
+</body>
+<script>
+    var app = new Vue({
+    el:'#app',
+    data:{
+      isactive:true,
+      isError:false
+    },
+    methods:{
+       changeActive(){
+           this.isactive =! this.isactive;
+       },
+       changeError(){
+           this.isError =! this.isError;
+       }
+    },
+    computed:{
+        Object(){
+            return{
+                active:this.isactive,
+                Error:this.isError,
+            }
+        }
+    }
+})
+</script>
+</html>

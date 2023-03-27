@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js">   </script>
+    <title>Document</title>
+    <style>
+        .listblogs {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .listblogs .doanvan1 {
+            width: 21%;
+            margin: 2%;
+            border: 1px solid red;
+        }
+        .title{
+            color: blue;
+            font-size: 30px;
+
+        }
+    </style>
+</head>
+
+<body>
+   
+    <div id="app">
+        <ul>
+            <li v-for="( value , key ) in couse"> 
+                {{key}} : {{ value}},
+            </li>
+        </ul>
+        <div class="listblogs">
+        <div v-for="(abc, index) in listblogs" class="doanvan1" v-bind:key="index">
+            <div class="title">{{abc.title}}</div>
+            <div class="doanvan"> {{abc.body}}
+            </div>
+        </div>
+       
+        </div>
+            </div>
+</body>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            couse :{
+                math: 9,
+                english:6,
+                physize:7
+            },
+            listblogs: [
+                {
+                    "userId": 1,
+                    "id": 1,
+                    "title": "1. Hãy viết một đoạn văn miêu tả cảnh sông nước, mẫu 1:",
+                    "body": "Chiều về là lúc bến sông quê tôi tấp nập nhất. Đoàn thuyền chở các bà, các chị từ chợ huyện, chợ tỉnh về cập bến. Các bà các chị được đàn con ùa ra đón. Con lớn đỡ cho mẹ gánh hàng. Con nhỏ vòi mẹ chia quà. Tiếng cười nói rộn ràng cả một khúc sông. Rồi ai về nhà nây. Con thuyền neo vào bến đỗ. Đây cũng là lúc bọn trẻ chăn trâu lùa trâu xuống tắm. Bọn trẻ tắm cho trâu, rồi bọn trẻ giỡn nước. Chúng té nước cho nhau. Chúng chơi trò đánh trận. Một đứa kiếm đâu được trái bóng tròn. Thế là chúng ném bóng cho nhau. Một ý kiến được cả bọn chấp nhận: chơi bóng nước. Chúng chia làm hai phe, chuyền bóng cho nhau. Phe nào chuyền được 6 chuyền là thắng. Phe thua phải cõng phe thắng chạy dọc con sông suốt từ bến tắm đến tận gốc đa. Bến sông quê tôi cứ rộn ràng như vậy cho đến lúc mặt trời lặn phía chân ười mới có chút bình lặng."
+                },
+                {
+                    "userId": 1,
+                    "id": 2,
+                    "title": "2. Hãy viết một đoạn văn miêu tả cảnh sông nước, mẫu 2:",
+                    "body": "Quê nội của em đẹp bởi có con sông chảy qua làng. Quanh năm cần mẫn, dòng sông chở nặng phù sa bồi đắp cho ruộng lúa. Buổi sớm tinh mơ, dòng nước mờ mờ phẳng lặng chảy. Giữa trưa, mặt sông nhấp nhô ánh bạc lẫn màu xanh nước biếc. Chiều tà, dòng nước trở thành màu khói trong, hơi tối âm âm. Hai bên bờ sông, luỹ tre làng nối vai nhau che rợp bóng mát cho đôi bờ. Sông đẹp nhất vào những đêm trăng. Bóng trăng lồng vào nước, luỹ tre làng in bóng trên dòng sông, vài chiếc thuyền neo trên bờ cát. Cảnh vật hữu tình đẹp như tranh vẽ.."
+                },
+                {
+                    "userId": 1,
+                    "id": 3,
+                    "title": "3. Hãy viết một đoạn văn miêu tả cảnh sông nước, mẫu 3:",
+                    "body": "Dưới chân Tháp Bà Ponaga, dòng sông Cái hiền hoà chảy ra biển. Hai bên bờ sông, nhà cửa lô nhô. Lác đác, vài cụm dừa mọc choài ra sông, tàu lá lao xao trong gió. Giữa sông, cù lao Hải Đảo rợp bóng dừa như một ốc đảo xanh lục giữa làn nước xanh lam. Cầu Bóng bắc qua sông nườm nượp xe cộ. Dưới chân cầu, nơi con sông đổ ra biển là cầu Cá. Thuyền đi biển sơn hai màu xanh đỏ, đậu san sát gần một mỏm đá nối lên như hòn non bộ. Vài chiếc tàu máy chạy trên sông. Tiếng còi ô tô gay gắt lẫn tiếng ghe máy chạy ì ầm làm dòng sông ồn ã lên. Nắng trưa bàng bạc lên dòng sông, mặt nước sông như dát một thứ ánh kim xanh biếc màu trời. Con sông, cửa biển và bến thuyền gắn bó bao đời là một trong những cảnh đẹp của thành phố Nha Trang được nhiều người biết đến."
+                }
+            ]
+        },
+        methods: {
+
+        }
+    })
+</script>
+
+</html>

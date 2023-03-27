@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js">   </script>
+    <title>Document</title>
+    <style>
+        .tash{
+            margin: 0;
+            padding: 0;
+        }
+        .tash li{
+            display: inline-block;
+            padding: 10px 15px ;
+            border:1px solid #000;
+            cursor: pointer;
+        }
+        .login, .register{
+            padding: 15px;
+            margin: 20px;
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <ul class="tash">
+        <li v-on:click="changetabs('login')">dang nhap</li>
+        <li v-on:click="changetabs('register')">dang ki</li>
+    </ul>
+    <!-- <div class="login" v-if="tabSelected === 'login'"> -->
+    <div class="login" v-show="tabSelected === 'login'">
+        <h2>form dang nhap</h2>
+        <form action="">
+            <input type="text" placeholder="nhap tai khoan">
+            <input type="text" placeholder="nhap mat khau">
+        </form>
+    </div>
+    <!-- <div class="register" v-else-if="tabSelected === 'register'"> -->
+    <div class="register" v-show="tabSelected === 'register'">
+        <h2>form dang ki</h2>
+        <form action="">
+            <input type="text" placeholder="nhap tai khoan">
+            <input type="text" placeholder="nhap mat khau">
+            <input type="text" placeholder="nhap lai mat khau">
+        </form>
+    </div>
+    </div>
+</body>
+<script>
+    var app = new Vue({
+        el:'#app',
+        data:{
+            tabSelected:'login'
+        },
+        methods:{
+            changetabs(tab){
+                this.tabSelected = tab;
+            }
+        }
+    })
+</script>
+</html>
+<!-- <template v-if="loginType === 'username'">
+    <label>Username</label>
+    <input placeholder="Enter your username" key="username-input">
+  </template>
+  <template v-else>
+    <label>Email</label>
+    <input placeholder="Enter your email address" key="email-input">
+  </template> -->

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js">   </script>
+    <style>
+        #hoangdz{
+            width: 400px;
+            height: 200px;
+            background-color: rgb(0, 26, 255);
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div id="hoangdz" v-on:mousemove='handleMouse'>
+        <p>clientX: {{ clientX }}</p>
+        <p>clientY: {{ clientY }}</p>
+        </div>
+<h1>
+  count:{{counter}}
+  <button v-on:click="handleclick($event, 5)">ấn vào em </button>
+  <!-- //counter+=2 -->
+</h1>
+    </div>
+
+</body>
+<script >
+    var app = new Vue({
+    el:'#app',
+    data:{
+        counter:0,
+        clientX:0,
+        clientY:0
+    },
+    methods:{
+        handleclick(e,number){
+            console.log('click',e),
+            this.counter +=number;
+        },
+        handleMouse(e){
+            console.log(e);
+            this.clientX=e.clientX;
+            this.clientY=e.clientY;
+        }
+    }
+})
+</script>
+
+</html>
